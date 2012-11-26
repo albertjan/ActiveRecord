@@ -3,6 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{489743F5-3634-4656-A851-AC8727F736FD}"
 	ProjectSection(SolutionItems) = preProject
 		buildscripts\Build.proj = buildscripts\Build.proj
+		Castle.Activerecord.3.0.0.1.nuspec = Castle.Activerecord.3.0.0.1.nuspec
 		buildscripts\Castle.Common.Targets = buildscripts\Castle.Common.Targets
 		Changes.txt = Changes.txt
 		License.txt = License.txt
