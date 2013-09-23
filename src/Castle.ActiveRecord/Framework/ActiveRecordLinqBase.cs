@@ -40,16 +40,30 @@ namespace Castle.ActiveRecord.Framework
 		{
 			get
 			{
-				var activeScope = holder.ThreadScopeInfo.GetRegisteredScope();
+                var activeScope = holder.ThreadScopeInfo.GetRegisteredScope();
 
-				if (activeScope == null)
-					throw new ActiveRecordException("Could not found a registered Scope. Linq queries needs a underlying a scope to be functional.");
+                if (activeScope == null)
+                    throw new ActiveRecordException(
+                        "Could not found a registered Scope. Linq queries needs a underlying a scope to be functional.");
 
-				var key = holder.GetSessionFactory(typeof(T));
+                var key = holder.GetSessionFactory(typeof(T));
 
-				var session = activeScope.IsKeyKnown(key) ? activeScope.GetSession(key) : SessionFactoryHolder.OpenSessionWithScope(activeScope, key);
+                var session = activeScope.IsKeyKnown(key)
+                                  ? activeScope.GetSession(key)
+                                  : SessionFactoryHolder.OpenSessionWithScope(activeScope, key);
 
-				return session.AsQueryable<T>();
+                try
+                {
+                    return session.AsQueryable<T>();
+                }
+                catch (Exception)
+                {
+                    holder.FailSession(session);
+                }
+                finally
+                {
+                    holder.ReleaseSession(session);
+                }
 			}
 		}
 	}
