@@ -59,6 +59,7 @@ namespace Castle.ActiveRecord.Framework
                 catch (Exception)
                 {
                     holder.FailSession(session);
+                    throw;
                 }
                 finally
                 {

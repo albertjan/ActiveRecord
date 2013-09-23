@@ -17,7 +17,7 @@ namespace Castle.ActiveRecord.Framework
 	using System;
 	using NHibernate.Cfg;
 	using NHibernate.Event;
-	using NHibernate.Search.Event;
+	//using NHibernate.Search.Event;
 	using System.Collections.Generic;
 
 	/// <summary>
@@ -43,7 +43,7 @@ namespace Castle.ActiveRecord.Framework
 		private object[] AddListenerTo(Type targetType, object[] eventListeners)
 		{
 			var list = new List<object>(eventListeners);
-			list.Add(new FullTextIndexEventListener());
+			//list.Add(new FullTextIndexEventListener());
 			var array = Array.CreateInstance(targetType, list.Count);
 			for (int i = 0; i < list.Count; i++)
 			{
