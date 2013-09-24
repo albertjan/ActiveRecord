@@ -44,7 +44,7 @@ namespace Castle.ActiveRecord.Framework
 
                 if (activeScope == null)
                     throw new ActiveRecordException(
-                        "Could not found a registered Scope. Linq queries needs a underlying a scope to be functional.");
+                        "Could not find a registered Scope. Linq queries needs a underlying a scope to be functional.");
 
                 var key = holder.GetSessionFactory(typeof(T));
 
