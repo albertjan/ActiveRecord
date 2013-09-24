@@ -12,6 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+using NHibernate;
+
 namespace Castle.ActiveRecord.Framework
 {
 	using System;
@@ -40,17 +42,11 @@ namespace Castle.ActiveRecord.Framework
 		{
 			get
 			{
-                var activeScope = holder.ThreadScopeInfo.GetRegisteredScope();
+			    var targetType = typeof (T);
 
-                if (activeScope == null)
-                    throw new ActiveRecordException(
-                        "Could not find a registered Scope. Linq queries needs a underlying a scope to be functional.");
+                EnsureInitialized(targetType);
 
-                var key = holder.GetSessionFactory(typeof(T));
-
-                var session = activeScope.IsKeyKnown(key)
-                                  ? activeScope.GetSession(key)
-                                  : SessionFactoryHolder.OpenSessionWithScope(activeScope, key);
+		    	ISession session = holder.CreateSession(targetType);
 
                 try
                 {
