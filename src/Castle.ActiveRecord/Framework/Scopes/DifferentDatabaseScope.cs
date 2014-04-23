@@ -24,7 +24,7 @@ namespace Castle.ActiveRecord.Framework.Scopes
 	/// Still very experimental and it's not bullet proof
 	/// for all situations
 	/// </summary>
-	public class DifferentDatabaseScope : AbstractScope
+	public class DifferentDatabaseScope : AbstractScope, IDisposable
 	{
 		private readonly IDbConnection connection;
 		private readonly SessionScope parentSimpleScope;
@@ -132,7 +132,7 @@ namespace Castle.ActiveRecord.Framework.Scopes
 				keyKnown = parentSimpleScope.IsKeyKnown(new KeyHolder(key, connection.ConnectionString, connection.GetHashCode()));
 			}
 
-			return keyKnown ? true : base.IsKeyKnown(key);
+			return keyKnown || base.IsKeyKnown(key);
 		}
 
 		/// <summary>
@@ -209,7 +209,14 @@ namespace Castle.ActiveRecord.Framework.Scopes
 		{
 			TransactionScope scope = (sender as TransactionScope);
 			scope.DiscardSessions( GetSessions() );
-		}
+		
+        }
+
+        public new void Dispose()
+	    {
+            connection.Dispose();
+	        base.Dispose();
+	    }   
 	}
 
 	class KeyHolder
