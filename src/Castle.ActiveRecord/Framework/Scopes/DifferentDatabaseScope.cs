@@ -210,8 +210,8 @@ namespace Castle.ActiveRecord.Framework.Scopes
 
         public new void Dispose()
 	    {
+            base.Dispose();
             connection.Dispose();
-	        base.Dispose();
 	    }   
 	}
 
