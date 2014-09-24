@@ -1,0 +1,1 @@
+C:\Users\alber_000\Documents\GitHub\ActiveRecord\src\Castle.ActiveRecord.Web\obj\NET35-Release\Castle.ActiveRecord.Web.csprojResolveAssemblyReference.cache

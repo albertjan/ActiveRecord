@@ -1,0 +1,6 @@
+C:\Users\alber_000\Documents\GitHub\ActiveRecord\build\NET40\NET40-Release\bin\Castle.ActiveRecord.Framework.Internal.Tests.dll.config
+C:\Users\alber_000\Documents\GitHub\ActiveRecord\build\NET40\NET40-Release\bin\Castle.ActiveRecord.Framework.Internal.Tests.dll
+C:\Users\alber_000\Documents\GitHub\ActiveRecord\build\NET40\NET40-Release\bin\Castle.ActiveRecord.Framework.Internal.Tests.pdb
+C:\Users\alber_000\Documents\GitHub\ActiveRecord\src\Castle.ActiveRecord.Framework.Internal.Tests\obj\NET40-Release\Castle.ActiveRecord.Framework.Internal.Tests-vs2010.csprojResolveAssemblyReference.cache
+C:\Users\alber_000\Documents\GitHub\ActiveRecord\src\Castle.ActiveRecord.Framework.Internal.Tests\obj\NET40-Release\Castle.ActiveRecord.Framework.Internal.Tests.dll
+C:\Users\alber_000\Documents\GitHub\ActiveRecord\src\Castle.ActiveRecord.Framework.Internal.Tests\obj\NET40-Release\Castle.ActiveRecord.Framework.Internal.Tests.pdb
