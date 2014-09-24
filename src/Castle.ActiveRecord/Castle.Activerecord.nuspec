@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>Castle.Activerecord</id>
-    <version>3.0.0.4</version>
+    <version>$version$</version>
     <title>Castle.Activerecord</title>
     <authors>Castle, Albert-Jan Nijburg</authors>
     <owners>Castle</owners>
