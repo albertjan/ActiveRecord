@@ -54,15 +54,19 @@ namespace Castle.ActiveRecord.Framework.Scopes
 
 			if (parentScope != null)
 			{
-				switch (parentScope.ScopeType)
+				if (parentScope.ScopeType == SessionScopeType.Simple)
 				{
-				    case SessionScopeType.Simple:
-				        parentSimpleScope = (SessionScope) parentScope;
-				        break;
-				    case SessionScopeType.Transactional:
-				        parentTransactionScope = (TransactionScope) parentScope;
-				        parentTransactionScope.OnTransactionCompleted += OnTransactionCompleted;
-				        break;
+					parentSimpleScope = (SessionScope) parentScope;
+				}
+				else if (parentScope.ScopeType == SessionScopeType.Transactional)
+				{
+					parentTransactionScope = (TransactionScope) parentScope;
+
+					parentTransactionScope.OnTransactionCompleted += OnTransactionCompleted;
+				}
+				else
+				{
+					// Not supported?
 				}
 			}
 		}
