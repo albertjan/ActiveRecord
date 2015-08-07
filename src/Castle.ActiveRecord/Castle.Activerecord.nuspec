@@ -15,7 +15,10 @@
     <tags>Castle activerecord orm NHibernate</tags>
     <dependencies>
       <dependency id="NHibernate.Castle" version="3.1.0.4000"/>
+      <dependency id="NHibernate" version="3.1.0.4000"/>
       <dependency id="Castle.Components.Validator" version="2.5.0" />
+      <dependency id="Castle.Core" version="2.5.2" />
+      <dependency id="Iesi.Collections" version="3.1.0.4000"/>
     </dependencies>
   </metadata>
 </package>
